@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://baby-shower-invtacion.netlify.app",
+  site: "https://baby-shower-invtacion.netlify.app/",
   vite: {
     plugins: [tailwindcss()],
   },

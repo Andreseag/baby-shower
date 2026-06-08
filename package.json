@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node generate-og.js",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,5 +15,8 @@
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.4",
     "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.1.0"
   }
 }
