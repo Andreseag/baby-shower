@@ -1,0 +1,52 @@
+---
+// Vista optimizada para generar el Preview Social (1200x630)
+const papas = "Daniel & Daniela";
+const fecha = "08 / 06 / 2026";
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    h1 { font-family: 'Playfair Display', serif; }
+    div, span { font-family: 'Quicksand', sans-serif; }
+  </style>
+</head>
+<body class="w-[1200px] h-[630px] bg-[#f4f7f4] flex items-center justify-center p-12 overflow-hidden relative">
+  
+  <!-- Patrones orgánicos de fondo de la tarjeta -->
+  <div class="absolute top-[-50px] left-[-50px] w-72 h-72 bg-emerald-200/50 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-[-50px] right-[-50px] w-96 h-96 bg-emerald-300/30 rounded-full blur-3xl"></div>
+
+  <!-- Borde Interno Estilizado -->
+  <div class="w-full h-full border-2 border-emerald-800/10 rounded-[32px] p-8 bg-white/70 backdrop-blur-md flex flex-col justify-between items-center text-center shadow-2xl">
+    
+    <!-- Top Meta -->
+    <div class="text-emerald-800/80 uppercase tracking-[0.3em] text-sm font-bold pt-4">
+      Estás Cordialmente Invitado
+    </div>
+
+    <!-- Bloque Central -->
+    <div class="space-y-4">
+      <span class="text-emerald-700 font-serif italic text-2xl block">Baby Shower de</span>
+      <h1 class="text-6xl font-semibold tracking-wide text-emerald-950 max-w-4xl leading-tight">
+        {papas}
+      </h1>
+      <div class="h-[2px] w-24 bg-emerald-400 mx-auto my-4"></div>
+    </div>
+
+    <!-- Info Inferior / Fecha -->
+    <div class="pb-4 space-y-1">
+      <div class="text-xs text-emerald-800/60 uppercase tracking-widest font-bold">Fecha del evento</div>
+      <div class="text-3xl font-bold text-emerald-900 tracking-wider">
+        {fecha}
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

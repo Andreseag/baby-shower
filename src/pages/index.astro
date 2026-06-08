@@ -1,11 +1,88 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Configuración del evento
+const papas = "Daniel & Daniela";
+const fechaFormateada = "Lunes, 08 de Junio de 2026";
+const googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=4.6097,-74.0817"; // Cambiar por tu ubicación
+const wazeUrl = "https://waze.com/ul?ll=4.6097,-74.0817&navigate=yes"; // Cambiar por tu ubicación
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title={`¡Baby Shower de ${papas}!`} 
+  description="Acompáñanos a celebrar la pronta llegada de nuestro bebé. Confirma la ubicación aquí."
+>
+  <main class="relative flex-1 flex flex-col items-center justify-center px-4 py-12 md:py-24 max-w-xl mx-auto w-full text-center">
+    
+    <!-- Elementos decorativos de fondo sutiles -->
+    <div class="absolute top-10 left-5 w-24 h-24 bg-emerald-100 rounded-full blur-2xl opacity-60 pointer-events-none"></div>
+    <div class="absolute bottom-20 right-5 w-32 h-32 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Contenedor Principal con Tarjeta Transparente -->
+    <div class="w-full bg-white/60 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-xl shadow-emerald-900/5 border border-white/80 flex flex-col items-center justify-center space-y-8">
+      
+      <!-- Encabezado Tierno/Estilizado -->
+      <div class="space-y-2">
+        <span class="text-xs uppercase tracking-widest text-emerald-700/80 font-bold block">¡Baby Boy en Camino!</span>
+        <div class="h-[1px] w-12 bg-emerald-300 mx-auto my-3"></div>
+        <h1 class="text-4xl md:text-5xl font-normal tracking-wide text-emerald-950">
+          Baby Shower
+        </h1>
+      </div>
+
+      <!-- Nombres de los padres -->
+      <div class="space-y-1">
+        <p class="text-sm text-emerald-800/70 italic font-serif">De los futuros papás</p>
+        <h2 class="text-2xl md:text-3xl font-medium text-emerald-900 font-serif">
+          {papas}
+        </h2>
+      </div>
+
+      <!-- Ilustración minimalista o separador -->
+      <div class="text-emerald-600 opacity-80 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-baby"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a8.5 8.5 0 1 1-14 0"/><path d="M10 2.2a3 3 0 0 1 4 0"/></svg>
+      </div>
+
+      <!-- Fecha del Evento -->
+      <div class="bg-emerald-50/80 border border-emerald-100 px-6 py-4 rounded-2xl w-full">
+        <p class="text-xs text-emerald-800/60 uppercase tracking-wider font-semibold">Cuándo</p>
+        <p class="text-lg font-medium text-emerald-950 mt-1">{fechaFormateada}</p>
+      </div>
+
+      <!-- SECCIÓN DEL CTA ÚNICO (Con opciones limpias de GPS) -->
+      <div class="w-full pt-4 space-y-3">
+        <p class="text-sm text-emerald-900/70 mb-2">¿Cómo llegar al evento? Selecciona tu app preferida:</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+          <!-- Botón Google Maps -->
+          <a 
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center space-x-2 w-full py-4 px-6 bg-emerald-700 hover:bg-emerald-800 active:scale-[0.98] text-white font-medium rounded-2xl shadow-lg shadow-emerald-700/20 transition-all duration-250 tracking-wide group"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:animate-bounce"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Google Maps</span>
+          </a>
+
+          <!-- Botón Waze -->
+          <a 
+            href={wazeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center space-x-2 w-full py-4 px-6 bg-white hover:bg-emerald-50 active:scale-[0.98] text-emerald-800 font-semibold rounded-2xl border-2 border-emerald-700/20 shadow-md transition-all duration-250 tracking-wide"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Waze GPS</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer sutil -->
+    <footer class="mt-8 text-xs text-emerald-900/40 tracking-wider">
+      Creamos este momento con amor • 2026
+    </footer>
+  </main>
 </Layout>
